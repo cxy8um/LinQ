@@ -16,12 +16,12 @@
 namespace CryptoNote {
 namespace parameters {
 
-const uint64_t DIFFICULTY_TARGET                             = 30; // seconds
+const uint64_t DIFFICULTY_TARGET                             = 60; // seconds
 
 const uint32_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 500000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 500000000;
 const size_t   CRYPTONOTE_MAX_TX_SIZE                        = 1000000000;
-const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 3914525;
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x8f;
 const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 40;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 60 * 60 * 2;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V3         = 3 * DIFFICULTY_TARGET;
@@ -31,12 +31,12 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 60;
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V3          = 11;
 
 // MONEY_SUPPLY - total number coins to be generated
-const uint64_t MONEY_SUPPLY                                  = UINT64_C(100000000000000);
-const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                   = 187000;
+const uint64_t MONEY_SUPPLY                                  = UINT64_C(100000000000);
+const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                   = 0;
 const size_t   ZAWY_DIFFICULTY_V2                            = 0;
 const uint8_t  ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION      = 3;
 
-const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX                 = 620000;
+const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX                 = 1;
 const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V2              = 700000;
 const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V3              = 800000;
 
@@ -46,7 +46,7 @@ const unsigned EMISSION_SPEED_FACTOR                         = 25;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 /* Premine amount */
-const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(0);
+const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(2750000000);
 
 /* How to generate a premine:
 
@@ -85,17 +85,17 @@ const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
 
 const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 2;
 
-const uint64_t MINIMUM_FEE                                   = UINT64_C(10);
+const uint64_t MINIMUM_FEE                                   = UINT64_C(10000);
 
 /* This section defines our minimum and maximum mixin counts required for transactions */
 const uint64_t MINIMUM_MIXIN_V1                              = 0;
-const uint64_t MAXIMUM_MIXIN_V1                              = 100;
+const uint64_t MAXIMUM_MIXIN_V1                              = 3;
 
-const uint64_t MINIMUM_MIXIN_V2                              = 7;
-const uint64_t MAXIMUM_MIXIN_V2                              = 7;
+const uint64_t MINIMUM_MIXIN_V2                              = 3;
+const uint64_t MAXIMUM_MIXIN_V2                              = 3;
 
-const uint64_t MINIMUM_MIXIN_V3                              = 3;
-const uint64_t MAXIMUM_MIXIN_V3                              = 3;
+const uint64_t MINIMUM_MIXIN_V3                              = 0;
+const uint64_t MAXIMUM_MIXIN_V3                              = 1;
 
 /* The heights to activate the mixin limits at */
 const uint32_t MIXIN_LIMITS_V1_HEIGHT                        = 440000;
@@ -187,7 +187,7 @@ const uint64_t FORK_HEIGHTS_SIZE = sizeof(FORK_HEIGHTS) / sizeof(*FORK_HEIGHTS);
 
    This will default to zero if the FORK_HEIGHTS array is empty, so you don't
    need to change it manually. */
-const uint8_t CURRENT_FORK_INDEX = FORK_HEIGHTS_SIZE == 0 ? 0 : SOFTWARE_SUPPORTED_FORK_INDEX;
+const uint8_t CURRENT_FORK_INDEX = FORK_HEIGHTS_SIZE == 0 ? 0 : 0;
 
 static_assert(CURRENT_FORK_INDEX >= 0, "CURRENT FORK INDEX must be >= 0");
 /* Make sure CURRENT_FORK_INDEX is a valid index, unless FORK_HEIGHTS is empty */
@@ -200,7 +200,7 @@ const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]                             = "TurtleCoin";
+const char     CRYPTONOTE_NAME[]                             = "LinQ";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
